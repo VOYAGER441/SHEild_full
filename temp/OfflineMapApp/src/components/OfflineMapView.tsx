@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { StyleSheet } from 'react-native';
 import MapView, { UrlTile, Region, PROVIDER_GOOGLE ,PROVIDER_DEFAULT} from 'react-native-maps';
 import TileDownloader from '../services/TileDownloader';
