@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Features - SHEild Women Safety App</title>
+  <link rel="icon" href="/images/favicon.png" type="image/png" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Custom CSS -->
+  <style>
+    :root {
+      /* Updated color scheme to match React Native app */
+      --primary-teal: #003b49;
+      --secondary-teal: #2EC4B6;
+      --alert-coral: #E76F51;
+      --background-light: #F4F7FB;
+      --card-white: #FFFFFF;
+      --text-dark: #0D1B2A;
+      --text-secondary: #e9edf2;
+    }
+
+    body {
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      background-color: var(--background-light);
+      font-size: 16px;
+      padding-top: 70px;
+    }
+
+    .hero-section {
+      background: linear-gradient(135deg,
+          var(--background-light),
+          var(--card-white));
+      padding: 60px 0;
+    }
+
+    .app-screenshot {
+      border-radius: 20px;
+      /* Match React Native borderRadius */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      /* Match React Native shadow */
+      transition: transform 0.3s ease;
+      width: 100%;
+      height: auto;
+    }
+
+    .app-screenshot:hover {
+      transform: translateY(-10px);
+    }
+
+    .features-section {
+      background-color: var(--card-white);
+      padding: 80px 0;
+    }
+
+    .feature-card {
+      padding: 30px;
+      border-radius: 20px;
+      background: var(--card-white);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      height: 100%;
+      transition: transform 0.3s ease;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .btn-primary {
+      background-color: var(--primary-teal);
+      border: none;
+      padding: 12px 30px;
+      border-radius: 20px;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--secondary-teal);
+      transform: translateY(-2px);
+      color: var(--text-secondary);
+    }
+
+    .section-heading {
+      color: var(--primary-teal);
+      font-weight: bold;
+      margin-bottom: 50px;
+      font-size: 2rem;
+    }
+
+    .alert-feature {
+      border-left: 4px solid var(--alert-coral);
+    }
+
+    .teal-feature {
+      border-left: 4px solid var(--secondary-teal);
+    }
+
+    .navbar-brand {
+      color: var(--primary-teal) !important;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    .nav-link {
+      color: var(--text-dark) !important;
+      font-size: 1rem;
+      padding: 0.5rem 1rem !important;
+    }
+
+    .nav-link:hover {
+      color: var(--primary-teal) !important;
+    }
+
+    footer {
+      background-color: var(--primary-teal) !important;
+    }
+
+    /* Mobile responsiveness improvements */
+    @media (max-width: 768px) {
+      .hero-section {
+        padding: 80px 0 40px 0;
+        text-align: center;
+      }
+
+      .section-heading {
+        font-size: 1.75rem;
+        margin-bottom: 30px;
+      }
+
+      .feature-card {
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+
+      .app-screenshot {
+        margin-bottom: 20px;
+      }
+
+      .btn-primary {
+        width: 100%;
+        margin-bottom: 15px;
+      }
+
+      .navbar-brand {
+        font-size: 1.25rem;
+      }
+
+      .nav-link {
+        padding: 0.75rem 1rem !important;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar-collapse {
+        background-color: white;
+        border-radius: 10px;
+        margin-top: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero-section {
+        padding: 60px 0 30px 0;
+      }
+
+      .section-heading {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+      }
+
+      .display-4 {
+        font-size: 2rem;
+      }
+
+      .lead {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+    <div class="container">
+      <img src="/images/favicon.png" alt="SHEild Logo" class="navbar-brand"
+        style="width: 60px; height: 70px; margin-right: 10px" />
+      <a class="navbar-brand fw-bold" href="/" style="color: var(--primary-teal)">SHEild</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="/features">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/#screenshots">Screenshots</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/#download">Download</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-12 text-center">
+          <h1 class="display-4 fw-bold mb-4">
+            SHEild App Features
+          </h1>
+          <p class="lead mb-4">
+            Comprehensive safety tools designed specifically for women's needs.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Features Section -->
+  <section class="features-section">
+    <div class="container">
+      <h2 class="text-center section-heading">Core Safety Features</h2>
+      <p class="text-center mb-5 lead">Advanced protection tools at your fingertips</p>
+
+      <div class="row g-4 mb-5">
+        <div class="col-md-6">
+          <div class="feature-card alert-feature">
+            <div class="row align-items-center">
+              <div class="col-md-4 mb-3 mb-md-0">
+                <img src="/images/sheild_sos_center.jpeg" alt="SOS Emergency Button" class="img-fluid rounded-3">
+              </div>
+              <div class="col-md-8">
+                <h3 class="h4 mb-3">SOS Emergency Button</h3>
+                <p class="mb-0">
+                  Instant alert system that notifies your emergency contacts with your location. With just one tap,
+                  your selected contacts receive an SMS with your current location and a distress signal.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="feature-card teal-feature">
+            <div class="row align-items-center">
+              <div class="col-md-4 mb-3 mb-md-0">
+                <img src="/images/appss2.png" alt="Fake Call Feature" class="img-fluid rounded-3">
+              </div>
+              <div class="col-md-8">
+                <h3 class="h4 mb-3">Fake Call Feature</h3>
+                <p class="mb-0">
+                  Create a fake call to escape uncomfortable situations discreetly. Schedule calls in advance or
+                  trigger them instantly with customizable caller names and ringtone.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="feature-card">
+            <div class="row align-items-center">
+              <div class="col-md-4 mb-3 mb-md-0">
+                <img src="/images/sheild_maps.jpeg" alt="Location Sharing" class="img-fluid rounded-3">
+              </div>
+              <div class="col-md-8">
+                <h3 class="h4 mb-3">Real-time Location Sharing</h3>
+                <p class="mb-0">
+                  Share your real-time location with trusted contacts for added safety. Set time limits for sharing
+                  and receive notifications when your location is being tracked.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="feature-card teal-feature">
+            <div class="row align-items-center">
+              <div class="col-md-4 mb-3 mb-md-0">
+                <img src="/images/sheild_ai.jpeg" alt="SHEild AI Assistant" class="img-fluid rounded-3">
+              </div>
+              <div class="col-md-8">
+                <h3 class="h4 mb-3">SHEild AI Assistant</h3>
+                <p class="mb-0">
+                  Get personalized safety recommendations and support from our AI assistant. Receive contextual
+                  advice based on your location, time, and situation.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="text-center section-heading mt-5">Community & Support Features</h2>
+      <p class="text-center mb-5 lead">Connect with others and access resources</p>
+
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="feature-card">
+            <div class="row align-items-center">
+              <div class="col-md-4 mb-3 mb-md-0">
+                <img src="/images/sheild_community.jpeg" alt="Community Support" class="img-fluid rounded-3">
+              </div>
+              <div class="col-md-8">
+                <h3 class="h4 mb-3">Community Support</h3>
+                <p class="mb-0">
+                  Connect with other users in a safe community platform to share experiences, seek advice, and
+                  offer support. Moderated discussions ensure a respectful environment.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="feature-card alert-feature">
+            <div class="row align-items-center">
+              <div class="col-md-4 mb-3 mb-md-0">
+                <img src="/images/sheild_maps.jpeg" alt="Offline Maps" class="img-fluid rounded-3">
+              </div>
+              <div class="col-md-8">
+                <h3 class="h4 mb-3">Offline Maps</h3>
+                <p class="mb-0">
+                  Access maps without internet connection for reliable navigation anywhere. Download maps for
+                  specific regions and access them even in areas with poor connectivity.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center section-heading">How SHEild Works</h2>
+      <p class="text-center mb-5 lead">Simple setup, powerful protection</p>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="feature-card text-center h-100">
+            <div class="mb-4">
+              <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center"
+                style="width: 70px; height: 70px; font-size: 1.5rem; font-weight: bold;">
+                1
+              </div>
+            </div>
+            <h3 class="h5 mb-3">Download & Register</h3>
+            <p class="mb-0">
+              Download the app from your app store and create an account with your basic information.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="feature-card text-center h-100">
+            <div class="mb-4">
+              <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center"
+                style="width: 70px; height: 70px; font-size: 1.5rem; font-weight: bold;">
+                2
+              </div>
+            </div>
+            <h3 class="h5 mb-3">Set Up Emergency Contacts</h3>
+            <p class="mb-0">
+              Add trusted contacts who will receive alerts in emergency situations.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="feature-card text-center h-100">
+            <div class="mb-4">
+              <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center"
+                style="width: 70px; height: 70px; font-size: 1.5rem; font-weight: bold;">
+                3
+              </div>
+            </div>
+            <h3 class="h5 mb-3">Activate Protection</h3>
+            <p class="mb-0">
+              Use any feature anytime - from SOS alerts to fake calls to community support.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Security Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <h2 class="section-heading">Security & Privacy</h2>
+          <p class="lead">
+            Your safety and privacy are our top priorities.
+          </p>
+          <p>
+            SHEild employs industry-standard encryption to protect your data. All communications between
+            your device and our servers are encrypted using TLS 1.3, ensuring that your personal information
+            remains secure.
+          </p>
+          <p>
+            We never sell or share your personal data with third parties. Your location data is only shared
+            with your explicit permission and only with your designated emergency contacts.
+          </p>
+          <p>
+            Our servers are hosted in secure data centers with 24/7 monitoring and physical security measures.
+          </p>
+        </div>
+        <div class="col-lg-6">
+          <img src="/images/sheild_profile.jpeg" alt="SHEild Security" class="img-fluid app-screenshot" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-5 bg-light">
+    <div class="container text-center">
+      <h2 class="section-heading">Ready to Enhance Your Safety?</h2>
+      <p class="lead mb-4">Download SHEild today and experience comprehensive protection</p>
+      <a href="/#download" class="btn btn-primary btn-lg">Download Now</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-light py-4" style="background-color: var(--primary-teal);">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 text-center text-md-start">
+          <p class="mb-0">&copy;
+            <script>document.write(new Date().getFullYear())</script> VOYAGER441 aka Mainak Banduri: All rights reserved
+            • Made with ❤️ for Women Safety
+          </p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item"><a href="/web/about/index.html"
+                class="text-light text-decoration-none">About</a></li>
+            <li class="list-inline-item"><a href="/web/features/index.html"
+                class="text-light text-decoration-none">Features</a></li>
+            <li class="list-inline-item"><a href="/web/contact/index.html"
+                class="text-light text-decoration-none">Contact Us</a></li>
+            <li class="list-inline-item"><a href="/web/privacy/index.html"
+                class="text-light text-decoration-none">Privacy Policy</a></li>
+            <li class="list-inline-item"><a href="/web/faq/index.html"
+                class="text-light text-decoration-none">FAQ</a></li>
+            <li class="list-inline-item"><a href="/web/terms/index.html"
+                class="text-light text-decoration-none">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

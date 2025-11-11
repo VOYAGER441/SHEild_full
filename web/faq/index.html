@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FAQ - SHEild Women Safety App</title>
+  <link rel="icon" href="/images/favicon.png" type="image/png" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Custom CSS -->
+  <style>
+    :root {
+      /* Updated color scheme to match React Native app */
+      --primary-teal: #003b49;
+      --secondary-teal: #2EC4B6;
+      --alert-coral: #E76F51;
+      --background-light: #F4F7FB;
+      --card-white: #FFFFFF;
+      --text-dark: #0D1B2A;
+      --text-secondary: #e9edf2;
+    }
+
+    body {
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      background-color: var(--background-light);
+      font-size: 16px;
+      padding-top: 70px;
+    }
+
+    .hero-section {
+      background: linear-gradient(135deg,
+          var(--background-light),
+          var(--card-white));
+      padding: 60px 0;
+    }
+
+    .app-screenshot {
+      border-radius: 20px;
+      /* Match React Native borderRadius */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      /* Match React Native shadow */
+      transition: transform 0.3s ease;
+      width: 100%;
+      height: auto;
+    }
+
+    .app-screenshot:hover {
+      transform: translateY(-10px);
+    }
+
+    .features-section {
+      background-color: var(--card-white);
+      padding: 80px 0;
+    }
+
+    .feature-card {
+      padding: 30px;
+      border-radius: 20px;
+      background: var(--card-white);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      height: 100%;
+      transition: transform 0.3s ease;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .btn-primary {
+      background-color: var(--primary-teal);
+      border: none;
+      padding: 12px 30px;
+      border-radius: 20px;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--secondary-teal);
+      transform: translateY(-2px);
+      color: var(--text-secondary);
+    }
+
+    .section-heading {
+      color: var(--primary-teal);
+      font-weight: bold;
+      margin-bottom: 50px;
+      font-size: 2rem;
+    }
+
+    .alert-feature {
+      border-left: 4px solid var(--alert-coral);
+    }
+
+    .teal-feature {
+      border-left: 4px solid var(--secondary-teal);
+    }
+
+    .navbar-brand {
+      color: var(--primary-teal) !important;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    .nav-link {
+      color: var(--text-dark) !important;
+      font-size: 1rem;
+      padding: 0.5rem 1rem !important;
+    }
+
+    .nav-link:hover {
+      color: var(--primary-teal) !important;
+    }
+
+    footer {
+      background-color: var(--primary-teal) !important;
+    }
+
+    /* Mobile responsiveness improvements */
+    @media (max-width: 768px) {
+      .hero-section {
+        padding: 80px 0 40px 0;
+        text-align: center;
+      }
+
+      .section-heading {
+        font-size: 1.75rem;
+        margin-bottom: 30px;
+      }
+
+      .feature-card {
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+
+      .app-screenshot {
+        margin-bottom: 20px;
+      }
+
+      .btn-primary {
+        width: 100%;
+        margin-bottom: 15px;
+      }
+
+      .navbar-brand {
+        font-size: 1.25rem;
+      }
+
+      .nav-link {
+        padding: 0.75rem 1rem !important;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar-collapse {
+        background-color: white;
+        border-radius: 10px;
+        margin-top: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero-section {
+        padding: 60px 0 30px 0;
+      }
+
+      .section-heading {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+      }
+
+      .display-4 {
+        font-size: 2rem;
+      }
+
+      .lead {
+        font-size: 1rem;
+      }
+    }
+
+    .faq-card {
+      background-color: var(--card-white);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .faq-question {
+      color: var(--primary-teal);
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-answer {
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid #eee;
+    }
+
+    .toggle-icon {
+      font-size: 1.2rem;
+      transition: transform 0.3s ease;
+    }
+
+    .toggle-icon.rotated {
+      transform: rotate(180deg);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+    <div class="container">
+      <img src="/images/favicon.png" alt="SHEild Logo" class="navbar-brand"
+        style="width: 60px; height: 70px; margin-right: 10px" />
+      <a class="navbar-brand fw-bold" href="/" style="color: var(--primary-teal)">SHEild</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/#features">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/#screenshots">Screenshots</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/#download">Download</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-12 text-center">
+          <h1 class="display-4 fw-bold mb-4">
+            Frequently Asked Questions
+          </h1>
+          <p class="lead mb-4">
+            Find answers to common questions about SHEild and its features.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Content -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <h2 class="section-heading text-center mb-5">General Questions</h2>
+
+          <div class="faq-card">
+            <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false"
+              aria-controls="faq1">
+              What is SHEild and how does it work?
+              <span class="toggle-icon">▼</span>
+            </div>
+            <div class="collapse" id="faq1">
+              <div class="faq-answer">
+                <p>SHEild is a comprehensive women's safety application designed to provide personal security features
+                  and community support. The app offers several key features including:</p>
+                <ul>
+                  <li><strong>SOS Emergency Button:</strong> Sends instant alerts to your emergency contacts with your
+                    location</li>
+                  <li><strong>Fake Call Feature:</strong> Creates realistic fake calls to help you exit uncomfortable
+                    situations</li>
+                  <li><strong>Location Sharing:</strong> Share your real-time location with trusted contacts</li>
+                  <li><strong>Community Support:</strong> Connect with other users in a moderated, safe community
+                    platform</li>
+                  <li><strong>SHEild AI Assistant:</strong> Get personalized safety recommendations based on your
+                    situation</li>
+                  <li><strong>Offline Maps:</strong> Access maps without internet connection for reliable navigation
+                  </li>
+                </ul>
+                <p>The app works by combining your smartphone's capabilities with our secure servers to provide these
+                  safety features. All data is encrypted and protected according to our Privacy Policy.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-card">
+            <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false"
+              aria-controls="faq2">
+              Is SHEild free to use?
+              <span class="toggle-icon">▼</span>
+            </div>
+            <div class="collapse" id="faq2">
+              <div class="faq-answer">
+                <p>Yes, SHEild is completely free to download and use. We believe that personal safety should be
+                  accessible to everyone, regardless of their financial situation. All core features of the app are
+                  available at no cost.</p>
+                <p>We may introduce premium features in the future, but we will always maintain a robust set of free
+                  safety features. Any paid features will be clearly marked, and you'll never be required to pay to
+                  access basic safety functionality.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-card">
+            <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false"
+              aria-controls="faq3">
+              Which platforms does SHEild support?
+              <span class="toggle-icon">▼</span>
+            </div>
+            <div class="collapse" id="faq3">
+              <div class="faq-answer">
+                <p>SHEild is currently available for:</p>
+                <ul>
+                  <li><strong>Android:</strong> Available on the Google Play Store for devices running Android 7.0
+                    (Nougat) or higher</li>
+                  <li><strong>iOS:</strong> Available on the App Store for devices running iOS 12.0 or higher</li>
+                </ul>
+                <p>We recommend keeping your device's operating system updated to ensure compatibility with the latest
+                  version of SHEild. The app requires certain permissions to function properly, such as location access
+                  for emergency features and contacts access to notify your emergency contacts.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-card">
+            <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false"
+              aria-controls="faq4">
+              How is my privacy protected?
+              <span class="toggle-icon">▼</span>
+            </div>
+            <div class="collapse" id="faq4">
+              <div class="faq-answer">
+                <p>Your privacy and security are our top priorities. We implement several measures to protect your
+                  information:</p>
+                <ul>
+                  <li><strong>End-to-End Encryption:</strong> All communications between your device and our servers are
+                    encrypted using TLS 1.3</li>
+                  <li><strong>Minimal Data Collection:</strong> We only collect information necessary for the app to
+                    function</li>
+                  <li><strong>No Third-Party Sharing:</strong> We never sell or share your personal data with third
+                    parties for marketing purposes</li>
+                  <li><strong>Location Control:</strong> Your location data is only shared with your explicit permission
+                    and only with your designated emergency contacts</li>
+                  <li><strong>Secure Storage:</strong> Our servers are hosted in secure data centers with 24/7
+                    monitoring</li>
+                </ul>
+                <p>For more detailed information, please review our <a href="/privacy"
+                    style="color: var(--primary-teal);">Privacy Policy</a>.</p>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="section-heading text-center mt-5 mb-5">Safety Features</h2>
+
+          <div class="faq-card">
+            <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false"
+              aria-controls="faq5">
+              How does the SOS feature work?
+              <span class="toggle-icon">▼</span>
+            </div>
+            <div class="collapse" id="faq5">
+              <div class="faq-answer">
+                <p>The SOS feature is designed for emergency situations and works as follows:</p>
+                <ol>
+                  <li><strong>Activation:</strong> Press and hold the SOS button (usually accessible from your phone's
+                    lock screen or notification panel)</li>
+                  <li><strong>Countdown:</strong> A 3-second countdown begins to give you a chance to cancel if pressed
+                    accidentally</li>
+                  <li><strong>Alert Dispatch:</strong> If not canceled, the app sends an SMS with your location to your
+                    designated emergency contacts</li>
+                  <li><strong>Live Tracking:</strong> Your location is continuously shared with your contacts until you
+                    deactivate the feature</li>
+                  <li><strong>Audio Recording:</strong> (Optional) The app can record audio during the emergency for
+                    evidence</li>
+                </ol>
+                <p>It's important to note that the SOS feature requires proper setup of emergency contacts and location
+                  permissions to function correctly. We recommend testing this feature in a safe environment to ensure
+                  it works as expected.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-card">
+            <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#faq6" aria-expanded="false"
+              aria-controls="faq6">
+              Can I customize the fake call feature?
+              <span class="toggle-icon">▼</span>
+            </div>
+            <div class="collapse" id="faq6">
+              <div class="faq-answer">
+                <p>Yes, the fake call feature is highly customizable:</p>
+                <ul>
+                  <li><strong>Caller Identity:</strong> Choose from preset contacts or create custom caller profiles
+                  </li>
+                  <li><strong>Ringtone:</strong> Select from various ringtone options or use your default ringtone</li>
+                  <li><strong>Call Duration:</strong> Set how long the call should last</li>
+                  <li><strong>Scheduling:</strong> Schedule calls in advance for specific dates and times</li>
+                  <li><strong>Conversation Script:</strong> Customize what the caller says during the conversation</li>
+                </ul>
+                <p>The fake call feature is designed to be as realistic as possible to help you exit uncomfortable
+                  situations. You can trigger a call instantly or set it up in advance for situations you anticipate
+                  might be challenging.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-card">
+            <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#faq7" aria-expanded="false"
+              aria-controls="faq7">
+              How accurate is the location sharing feature?
+              <span class="toggle-icon">▼</span>
+            </div>
+            <div class="collapse" id="faq7">
+              <div class="faq-answer">
+                <p>Our location sharing feature utilizes GPS, Wi-Fi, and cellular data to determine your position with
+                  high accuracy:</p>
+                <ul>
+                  <li><strong>GPS Accuracy:</strong> Typically accurate to within 5 meters in open areas</li>
+                  <li><strong>Urban Areas:</strong> May be slightly less accurate (10-20 meters) due to buildings and
+                    obstacles</li>
+                  <li><strong>Indoor Locations:</strong> Accuracy varies depending on building construction and
+                    available Wi-Fi networks</li>
+                </ul>
+                <p>To ensure the best accuracy:</p>
+                <ul>
+                  <li>Keep GPS enabled on your device</li>
+                  <li>Allow the app to access your location in the background</li>
+                  <li>Ensure you have a clear view of the sky when possible</li>
+                  </p>
+                  <p>Please note that location accuracy depends on your device's hardware and network conditions. In
+                    emergency situations, even approximate location information can be valuable to your contacts.</p>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="section-heading text-center mt-5 mb-5">Technical Support</h2>
+
+          <div class="faq-card">
+            <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#faq8" aria-expanded="false"
+              aria-controls="faq8">
+              What should I do if the app isn't working properly?
+              <span class="toggle-icon">▼</span>
+            </div>
+            <div class="collapse" id="faq8">
+              <div class="faq-answer">
+                <p>If you're experiencing issues with the app, try these troubleshooting steps:</p>
+                <ol>
+                  <li><strong>Restart the App:</strong> Close the app completely and reopen it</li>
+                  <li><strong>Check Permissions:</strong> Ensure all required permissions (location, contacts,
+                    notifications) are granted</li>
+                  <li><strong>Update the App:</strong> Make sure you're using the latest version from the app store</li>
+                  <li><strong>Restart Your Device:</strong> Sometimes a simple restart can resolve issues</li>
+                  <li><strong>Clear Cache:</strong> Clear the app's cache through your device's settings</li>
+                  <li><strong>Reinstall:</strong> As a last resort, uninstall and reinstall the app</li>
+                </ol>
+                <p>If these steps don't resolve the issue, please contact our support team at <a
+                    href="mailto:support@shieldapp.com" style="color: var(--primary-teal);">support@shieldapp.com</a>
+                  with details about the problem, including your device model, operating system version, and app
+                  version.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-card">
+            <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#faq9" aria-expanded="false"
+              aria-controls="faq9">
+              Why am I not receiving notifications from the app?
+              <span class="toggle-icon">▼</span>
+            </div>
+            <div class="collapse" id="faq9">
+              <div class="faq-answer">
+                <p>If you're not receiving notifications from SHEild, check these settings:</p>
+                <ol>
+                  <li><strong>In-App Notifications:</strong> Ensure notifications are enabled within the app settings
+                  </li>
+                  <li><strong>Device Settings:</strong> Check your phone's notification settings for SHEild and ensure
+                    notifications are allowed</li>
+                  <li><strong>Battery Optimization:</strong> Some devices have aggressive battery savers that can
+                    restrict background activity. Add SHEild to the whitelist of apps allowed to run in the background
+                  </li>
+                  <li><strong>Do Not Disturb:</strong> Ensure Do Not Disturb mode isn't blocking app notifications</li>
+                  <li><strong>Network Connectivity:</strong> Poor network connection can delay notifications</li>
+                </ol>
+                <p>For emergency features like SOS alerts, we recommend testing the notification system to ensure it
+                  works properly. Critical safety notifications are designed to bypass most Do Not Disturb settings, but
+                  this can vary by device manufacturer.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-card">
+            <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#faq10" aria-expanded="false"
+              aria-controls="faq10">
+              How much battery does SHEild consume?
+              <span class="toggle-icon">▼</span>
+            </div>
+            <div class="collapse" id="faq10">
+              <div class="faq-answer">
+                <p>We've optimized SHEild to minimize battery consumption while maintaining functionality:</p>
+                <ul>
+                  <li><strong>Background Operation:</strong> The app uses minimal background processes to preserve
+                    battery life</li>
+                  <li><strong>Location Services:</strong> Location tracking is only active when needed (during
+                    emergencies or when sharing location)</li>
+                  <li><strong>Push Notifications:</strong> We use efficient push notification services that don't
+                    require constant polling</li>
+                </ul>
+                <p>Typical battery usage:</p>
+                <ul>
+                  <li><strong>Normal Use:</strong> 1-3% battery per day with moderate usage</li>
+                  <li><strong>Active Location Sharing:</strong> 5-10% battery per hour during continuous sharing</li>
+                  <li><strong>Emergency Mode:</strong> 3-5% battery per hour during active emergency alerts</li>
+                </ul>
+                <p>You can reduce battery consumption by adjusting app settings, such as reducing location accuracy when
+                  not in immediate danger or limiting background app refresh.</p>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="section-heading text-center mt-5 mb-5">Account & Security</h2>
+
+          <div class="faq-card">
+            <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#faq11" aria-expanded="false"
+              aria-controls="faq11">
+              How do I reset my password?
+              <span class="toggle-icon">▼</span>
+            </div>
+            <div class="collapse" id="faq11">
+              <div class="faq-answer">
+                <p>If you've forgotten your password, you can reset it using these steps:</p>
+                <ol>
+                  <li>On the login screen, tap "Forgot Password"</li>
+                  <li>Enter the email address associated with your account</li>
+                  <li>Check your email for a password reset link (check spam/junk folders if not in inbox)</li>
+                  <li>Click the reset link and enter your new password</li>
+                  <li>Confirm your new password and log in</li>
+                </ol>
+                <p>Password requirements:</p>
+                <ul>
+                  <li>At least 8 characters long</li>
+                  <li>Include at least one uppercase letter</li>
+                  <li>Include at least one lowercase letter</li>
+                  <li>Include at least one number</li>
+                  <li>Include at least one special character</li>
+                </ul>
+                <p>For security reasons, password reset links expire after 24 hours. If you don't receive the email
+                  within a few minutes, please contact our support team.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-card">
+            <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#faq12" aria-expanded="false"
+              aria-controls="faq12">
+              What happens if I lose my phone?
+              <span class="toggle-icon">▼</span>
+            </div>
+            <div class="collapse" id="faq12">
+              <div class="faq-answer">
+                <p>If your phone with SHEild installed is lost or stolen:</p>
+                <ol>
+                  <li><strong>Remote Logout:</strong> Log in to your account from another device and remotely log out
+                    the lost phone</li>
+                  <li><strong>Change Password:</strong> Immediately change your account password to prevent unauthorized
+                    access</li>
+                  <li><strong>Notify Contacts:</strong> Inform your emergency contacts that they may receive false
+                    alerts from your lost device</li>
+                  <li><strong>Disable Features:</strong> Temporarily disable location sharing and other features until
+                    you recover or replace your device</li>
+                  <li><strong>Report to Authorities:</strong> File a report with local authorities if the phone was
+                    stolen</li>
+                </ol>
+                <p>SHEild does not store sensitive personal data on your device, but we recommend taking these
+                  precautions to protect your account. The app does not have remote wipe capabilities, so it's important
+                  to secure your account through the steps above.</p>
+                <p>If you had location sharing active, your contacts will be notified that you've logged out of the app,
+                  which may help them understand that any subsequent location updates are not from you.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-5 bg-light">
+    <div class="container text-center">
+      <h2 class="section-heading">Still Have Questions?</h2>
+      <p class="lead mb-4">Our support team is here to help you with any additional questions</p>
+      <a href="/contact" class="btn btn-primary btn-lg">Contact Support</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-light py-4" style="background-color: var(--primary-teal);">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 text-center text-md-start">
+          <p class="mb-0">&copy;
+            <script>document.write(new Date().getFullYear())</script> VOYAGER441 aka Mainak Banduri: All rights reserved
+            • Made with ❤️ for Women Safety
+          </p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item"><a href="/web/about/index.html"
+                class="text-light text-decoration-none">About</a></li>
+            <li class="list-inline-item"><a href="/web/features/index.html"
+                class="text-light text-decoration-none">Features</a></li>
+            <li class="list-inline-item"><a href="/web/contact/index.html"
+                class="text-light text-decoration-none">Contact Us</a></li>
+            <li class="list-inline-item"><a href="/web/privacy/index.html"
+                class="text-light text-decoration-none">Privacy Policy</a></li>
+            <li class="list-inline-item"><a href="/web/faq/index.html"
+                class="text-light text-decoration-none">FAQ</a></li>
+            <li class="list-inline-item"><a href="/web/terms/index.html"
+                class="text-light text-decoration-none">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom JavaScript for FAQ toggle -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const faqQuestions = document.querySelectorAll('.faq-question');
+
+      faqQuestions.forEach(function (question) {
+        question.addEventListener('click', function () {
+          const icon = this.querySelector('.toggle-icon');
+          icon.classList.toggle('rotated');
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

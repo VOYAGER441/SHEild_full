@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Terms of Service - SHEild Women Safety App</title>
+  <link rel="icon" href="/images/favicon.png" type="image/png" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Custom CSS -->
+  <style>
+    :root {
+      /* Updated color scheme to match React Native app */
+      --primary-teal: #003b49;
+      --secondary-teal: #2EC4B6;
+      --alert-coral: #E76F51;
+      --background-light: #F4F7FB;
+      --card-white: #FFFFFF;
+      --text-dark: #0D1B2A;
+      --text-secondary: #e9edf2;
+    }
+
+    body {
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      background-color: var(--background-light);
+      font-size: 16px;
+      padding-top: 70px;
+    }
+
+    .hero-section {
+      background: linear-gradient(135deg,
+          var(--background-light),
+          var(--card-white));
+      padding: 60px 0;
+    }
+
+    .app-screenshot {
+      border-radius: 20px;
+      /* Match React Native borderRadius */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      /* Match React Native shadow */
+      transition: transform 0.3s ease;
+      width: 100%;
+      height: auto;
+    }
+
+    .app-screenshot:hover {
+      transform: translateY(-10px);
+    }
+
+    .features-section {
+      background-color: var(--card-white);
+      padding: 80px 0;
+    }
+
+    .feature-card {
+      padding: 30px;
+      border-radius: 20px;
+      background: var(--card-white);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      height: 100%;
+      transition: transform 0.3s ease;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .btn-primary {
+      background-color: var(--primary-teal);
+      border: none;
+      padding: 12px 30px;
+      border-radius: 20px;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--secondary-teal);
+      transform: translateY(-2px);
+      color: var(--text-secondary);
+    }
+
+    .section-heading {
+      color: var(--primary-teal);
+      font-weight: bold;
+      margin-bottom: 50px;
+      font-size: 2rem;
+    }
+
+    .alert-feature {
+      border-left: 4px solid var(--alert-coral);
+    }
+
+    .teal-feature {
+      border-left: 4px solid var(--secondary-teal);
+    }
+
+    .navbar-brand {
+      color: var(--primary-teal) !important;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    .nav-link {
+      color: var(--text-dark) !important;
+      font-size: 1rem;
+      padding: 0.5rem 1rem !important;
+    }
+
+    .nav-link:hover {
+      color: var(--primary-teal) !important;
+    }
+
+    footer {
+      background-color: var(--primary-teal) !important;
+    }
+
+    /* Mobile responsiveness improvements */
+    @media (max-width: 768px) {
+      .hero-section {
+        padding: 80px 0 40px 0;
+        text-align: center;
+      }
+
+      .section-heading {
+        font-size: 1.75rem;
+        margin-bottom: 30px;
+      }
+
+      .feature-card {
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+
+      .app-screenshot {
+        margin-bottom: 20px;
+      }
+
+      .btn-primary {
+        width: 100%;
+        margin-bottom: 15px;
+      }
+
+      .navbar-brand {
+        font-size: 1.25rem;
+      }
+
+      .nav-link {
+        padding: 0.75rem 1rem !important;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar-collapse {
+        background-color: white;
+        border-radius: 10px;
+        margin-top: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero-section {
+        padding: 60px 0 30px 0;
+      }
+
+      .section-heading {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+      }
+
+      .display-4 {
+        font-size: 2rem;
+      }
+
+      .lead {
+        font-size: 1rem;
+      }
+    }
+
+    .policy-section {
+      background-color: var(--card-white);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+    <div class="container">
+      <img src="/images/favicon.png" alt="SHEild Logo" class="navbar-brand"
+        style="width: 60px; height: 70px; margin-right: 10px" />
+      <a class="navbar-brand fw-bold" href="/" style="color: var(--primary-teal)">SHEild</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/#features">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/#screenshots">Screenshots</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/#download">Download</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-12 text-center">
+          <h1 class="display-4 fw-bold mb-4">
+            Terms of Service
+          </h1>
+          <p class="lead mb-4">
+            Please read these terms carefully before using our services.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Terms of Service Content -->
+  <section class="py-5">
+    <div class="container">
+      <div class="policy-section">
+        <h2 class="section-heading">Introduction</h2>
+        <p>
+          Welcome to SHEild, a women's safety application developed by VOYAGER441. These Terms of Service
+          ("Terms") govern your access to and use of our mobile application and related services (collectively,
+          the "Service").
+        </p>
+        <p>
+          By downloading, accessing, or using our Service, you agree to be bound by these Terms. If you do not
+          agree to these Terms, you may not access or use the Service.
+        </p>
+        <p>
+          These Terms apply to all visitors, users, and others who access or use the Service. By accessing or
+          using the Service, you agree to be bound by these Terms. If you disagree with any part of the terms,
+          then you may not access the Service.
+        </p>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="section-heading">Eligibility</h2>
+        <p>
+          You must be at least 13 years old to use the Service. By agreeing to these Terms, you represent and
+          warrant that you are at least 13 years old. If you are under 18 years old, you represent that you
+          have your parent or guardian's permission to use the Service.
+        </p>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="section-heading">Account Registration</h2>
+        <p>
+          To access certain features of the Service, you may be required to register for an account. When you
+          register, you agree to provide accurate, current, and complete information about yourself as prompted
+          by the registration form.
+        </p>
+        <p>
+          You are responsible for maintaining the confidentiality of your account and password, including but
+          not limited to the restriction of access to your computer and/or account. You agree to accept
+          responsibility for any and all activities or actions that occur under your account and/or password,
+          whether your password is with our Service or a third-party service.
+        </p>
+        <p>
+          You agree to immediately notify us of any unauthorized use of your account or any other breach of
+          security. We will not be liable for any acts or omissions by you, including any damages of any kind
+          incurred as a result of such acts or omissions.
+        </p>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="section-heading">Use of Service</h2>
+        <p>
+          Subject to your compliance with these Terms, we grant you a limited, non-exclusive, non-transferable,
+          revocable license to use the Service for your personal, non-commercial use.
+        </p>
+        <p>You agree not to:</p>
+        <ul>
+          <li>Use the Service for any illegal purpose or in violation of any local, state, national, or international
+            law</li>
+          <li>Interfere with or disrupt the operation of the Service or the servers or networks used to make the Service
+            available</li>
+          <li>Impersonate any person or entity, or falsely state or otherwise misrepresent your affiliation with a
+            person or entity</li>
+          <li>Transmit any viruses, worms, defects, Trojan horses, or other items of a destructive nature</li>
+          <li>Use any robot, spider, scraper, or other automated means to access the Service for any purpose</li>
+          <li>Take any action that imposes, or may impose, in our sole discretion, an unreasonable or disproportionately
+            large load on our infrastructure</li>
+          <li>Bypass the measures we may use to prevent or restrict access to the Service</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="section-heading">Emergency Features</h2>
+        <p>
+          The Service provides emergency alert features designed to assist users in urgent situations. You
+          understand and agree that:
+        </p>
+        <ul>
+          <li>The Service relies on your device's functionality and network connectivity to operate</li>
+          <li>We do not guarantee that emergency alerts will be received by your designated contacts</li>
+          <li>The Service is not a replacement for traditional emergency services such as calling local emergency
+            numbers</li>
+          <li>You are solely responsible for ensuring your emergency contact information is accurate and up-to-date</li>
+          <li>We are not liable for any delays or failures in the delivery of emergency alerts</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="section-heading">Intellectual Property</h2>
+        <p>
+          The Service and its original content, features, and functionality are and will remain the exclusive
+          property of VOYAGER441 and its licensors. The Service is protected by copyright, trademark, and other
+          laws of both the India and foreign countries.
+        </p>
+        <p>
+          Our trademarks and trade dress may not be used in connection with any product or service without the
+          prior written consent of VOYAGER441.
+        </p>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="section-heading">Links To Other Web Sites</h2>
+        <p>
+          Our Service may contain links to third-party web sites or services that are not owned or controlled
+          by VOYAGER441.
+        </p>
+        <p>
+          VOYAGER441 has no control over, and assumes no responsibility for, the content, privacy policies, or
+          practices of any third-party web sites or services. You further acknowledge and agree that VOYAGER441
+          shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged
+          to be caused by or in connection with use of or reliance on any such content, goods, or services
+          available on or through any such web sites or services.
+        </p>
+        <p>
+          We strongly advise you to read the terms and conditions and privacy policies of any third-party web
+          sites or services that you visit.
+        </p>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="section-heading">Termination</h2>
+        <p>
+          We may terminate or suspend access to our Service immediately, without prior notice or liability,
+          for any reason whatsoever, including without limitation if you breach the Terms.
+        </p>
+        <p>
+          All provisions of the Terms which by their nature should survive termination shall survive
+          termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity
+          and limitations of liability.
+        </p>
+        <p>
+          Upon termination, your right to use the Service will immediately cease. If you wish to terminate
+          your account, you may simply discontinue using the Service.
+        </p>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="section-heading">Disclaimer</h2>
+        <p>
+          Your use of the Service is at your sole risk. The Service is provided on an "AS IS" and "AS AVAILABLE" basis.
+          The Service is provided without warranties of any kind, whether express or implied, including, but not
+          limited to, implied warranties of merchantability, fitness for a particular purpose, non-infringement or
+          course of performance.
+        </p>
+        <p>
+          VOYAGER441 its subsidiaries, affiliates, and its licensors do not warrant that a) the Service will
+          function uninterrupted, secure or available at any particular time or location; b) any errors or defects
+          will be corrected; c) the Service is free of viruses or other harmful components; or d) the results of
+          using the Service will meet your requirements.
+        </p>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="section-heading">Limitation of Liability</h2>
+        <p>
+          In no event shall VOYAGER441, nor its directors, employees, partners, agents, suppliers, or affiliates,
+          be liable for any indirect, incidental, special, consequential or punitive damages, including without
+          limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from (i) your
+          access to or use of or inability to access or use the Service; (ii) any conduct or content of any
+          third party on the Service; (iii) any content obtained from the Service; and (iv) unauthorized access,
+          use or alteration of your transmissions or content, whether based on warranty, contract, tort
+          (including negligence) or any other legal theory, whether or not we have been informed of the
+          possibility of such damage, and even if a remedy set forth herein is found to have failed of its
+          essential purpose.
+        </p>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="section-heading">Governing Law</h2>
+        <p>
+          These Terms shall be governed and construed in accordance with the laws of India, without regard to
+          its conflict of law provisions.
+        </p>
+        <p>
+          Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights.
+          If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions
+          of these Terms will remain in effect. These Terms constitute the entire agreement between us regarding our
+          Service, and supersede and replace any prior agreements we might have between us regarding the Service.
+        </p>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="section-heading">Changes to These Terms</h2>
+        <p>
+          We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision
+          is material we will try to provide at least 30 days notice prior to any new terms taking effect. What
+          constitutes a material change will be determined at our sole discretion.
+        </p>
+        <p>
+          By continuing to access or use our Service after those revisions become effective, you agree to be bound
+          by the revised terms. If you do not agree to the new terms, please stop using the Service.
+        </p>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="section-heading">Contact Us</h2>
+        <p>If you have any questions about these Terms, please contact us at:</p>
+        <p>
+          <strong>Email:</strong> terms@shieldapp.com<br>
+          <strong>Address:</strong> VOYAGER441, Women Safety Division<br>
+          Kolkata, West Bengal, India
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-light py-4" style="background-color: var(--primary-teal);">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 text-center text-md-start">
+          <p class="mb-0">&copy;
+            <script>document.write(new Date().getFullYear())</script> VOYAGER441 aka Mainak Banduri: All rights reserved
+            • Made with ❤️ for Women Safety
+          </p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item"><a href="/web/about/index.html"
+                class="text-light text-decoration-none">About</a></li>
+            <li class="list-inline-item"><a href="/web/features/index.html"
+                class="text-light text-decoration-none">Features</a></li>
+            <li class="list-inline-item"><a href="/web/contact/index.html"
+                class="text-light text-decoration-none">Contact Us</a></li>
+            <li class="list-inline-item"><a href="/web/privacy/index.html"
+                class="text-light text-decoration-none">Privacy Policy</a></li>
+            <li class="list-inline-item"><a href="/web/faq/index.html"
+                class="text-light text-decoration-none">FAQ</a></li>
+            <li class="list-inline-item"><a href="/web/terms/index.html"
+                class="text-light text-decoration-none">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

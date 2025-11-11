@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy - SHEild Women Safety App</title>
+  <link rel="icon" href="/images/favicon.png" type="image/png" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Custom CSS -->
+  <style>
+    :root {
+      /* Updated color scheme to match React Native app */
+      --primary-teal: #003b49;
+      --secondary-teal: #2EC4B6;
+      --alert-coral: #E76F51;
+      --background-light: #F4F7FB;
+      --card-white: #FFFFFF;
+      --text-dark: #0D1B2A;
+      --text-secondary: #e9edf2;
+    }
+
+    body {
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      background-color: var(--background-light);
+      font-size: 16px;
+      padding-top: 70px;
+    }
+
+    .hero-section {
+      background: linear-gradient(135deg,
+          var(--background-light),
+          var(--card-white));
+      padding: 60px 0;
+    }
+
+    .app-screenshot {
+      border-radius: 20px;
+      /* Match React Native borderRadius */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      /* Match React Native shadow */
+      transition: transform 0.3s ease;
+      width: 100%;
+      height: auto;
+    }
+
+    .app-screenshot:hover {
+      transform: translateY(-10px);
+    }
+
+    .features-section {
+      background-color: var(--card-white);
+      padding: 80px 0;
+    }
+
+    .feature-card {
+      padding: 30px;
+      border-radius: 20px;
+      background: var(--card-white);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      height: 100%;
+      transition: transform 0.3s ease;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .btn-primary {
+      background-color: var(--primary-teal);
+      border: none;
+      padding: 12px 30px;
+      border-radius: 20px;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--secondary-teal);
+      transform: translateY(-2px);
+      color: var(--text-secondary);
+    }
+
+    .section-heading {
+      color: var(--primary-teal);
+      font-weight: bold;
+      margin-bottom: 50px;
+      font-size: 2rem;
+    }
+
+    .alert-feature {
+      border-left: 4px solid var(--alert-coral);
+    }
+
+    .teal-feature {
+      border-left: 4px solid var(--secondary-teal);
+    }
+
+    .navbar-brand {
+      color: var(--primary-teal) !important;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    .nav-link {
+      color: var(--text-dark) !important;
+      font-size: 1rem;
+      padding: 0.5rem 1rem !important;
+    }
+
+    .nav-link:hover {
+      color: var(--primary-teal) !important;
+    }
+
+    footer {
+      background-color: var(--primary-teal) !important;
+    }
+
+    /* Mobile responsiveness improvements */
+    @media (max-width: 768px) {
+      .hero-section {
+        padding: 80px 0 40px 0;
+        text-align: center;
+      }
+
+      .section-heading {
+        font-size: 1.75rem;
+        margin-bottom: 30px;
+      }
+
+      .feature-card {
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+
+      .app-screenshot {
+        margin-bottom: 20px;
+      }
+
+      .btn-primary {
+        width: 100%;
+        margin-bottom: 15px;
+      }
+
+      .navbar-brand {
+        font-size: 1.25rem;
+      }
+
+      .nav-link {
+        padding: 0.75rem 1rem !important;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar-collapse {
+        background-color: white;
+        border-radius: 10px;
+        margin-top: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero-section {
+        padding: 60px 0 30px 0;
+      }
+
+      .section-heading {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+      }
+
+      .display-4 {
+        font-size: 2rem;
+      }
+
+      .lead {
+        font-size: 1rem;
+      }
+    }
+
+    .policy-section {
+      background-color: var(--card-white);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+    <div class="container">
+      <img src="/images/favicon.png" alt="SHEild Logo" class="navbar-brand"
+        style="width: 60px; height: 70px; margin-right: 10px" />
+      <a class="navbar-brand fw-bold" href="/" style="color: var(--primary-teal)">SHEild</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/#features">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/#screenshots">Screenshots</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/#download">Download</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-12 text-center">
+          <h1 class="display-4 fw-bold mb-4">
+            Privacy Policy
+          </h1>
+          <p class="lead mb-4">
+            Your privacy and security are our highest priorities.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Privacy Policy Content -->
+  <section class="py-5">
+    <div class="container">
+      <div class="policy-section">
+        <h2 class="section-heading">Introduction</h2>
+        <p>
+          This Privacy Policy describes how VOYAGER441 ("we," "our," or "us") collects, uses, and shares information
+          about you when you use our SHEild mobile application ("App") and related services. This policy applies to
+          information we collect when you use our App, or when you otherwise interact with our services.
+        </p>
+        <p>
+          By using our App, you agree to the collection, use, and disclosure of your information as described in
+          this Privacy Policy. If you do not agree with this policy, please do not use our App.
+        </p>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="section-heading">Information We Collect</h2>
+        <h4>Information You Provide to Us</h4>
+        <p>We collect information you provide directly to us, including:</p>
+        <ul>
+          <li><strong>Account Information:</strong> When you register for an account, we collect your name, email
+            address, phone number, and password.</li>
+          <li><strong>Emergency Contacts:</strong> Names and phone numbers of contacts you designate as emergency
+            contacts.</li>
+          <li><strong>User Content:</strong> Information you provide when participating in community forums or
+            contacting support.</li>
+          <li><strong>Feedback:</strong> Information you provide when you contact us or participate in surveys.</li>
+        </ul>
+
+        <h4>Information We Collect Automatically</h4>
+        <p>When you use our App, we automatically collect certain information, including:</p>
+        <ul>
+          <li><strong>Device Information:</strong> Device model, operating system, unique device identifiers, and mobile
+            network information.</li>
+          <li><strong>Usage Information:</strong> Information about how you use our App, including access times,
+            features used, and actions taken.</li>
+          <li><strong>Location Information:</strong> Precise location information when you enable location services for
+            features like emergency alerts.</li>
+        </ul>
+
+        <h4>Information from Third Parties</h4>
+        <p>We may receive information about you from third parties, such as:</p>
+        <ul>
+          <li><strong>Social Media Services:</strong> If you choose to connect your social media accounts to our App.
+          </li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="section-heading">How We Use Your Information</h2>
+        <p>We use the information we collect to:</p>
+        <ul>
+          <li>Provide, maintain, and improve our App and services</li>
+          <li>Enable emergency alert features and notify your designated contacts</li>
+          <li>Process transactions and send related information</li>
+          <li>Send technical notices, updates, and security alerts</li>
+          <li>Respond to your comments, questions, and customer service requests</li>
+          <li>Monitor and analyze trends, usage, and activities in connection with our App</li>
+          <li>Detect, investigate, and prevent fraudulent transactions and other illegal activities</li>
+          <li>Personalize and improve our App and provide tailored content and features</li>
+          <li>Carry out any other purpose for which the information was collected</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="section-heading">Sharing of Information</h2>
+        <p>We may share your information as follows:</p>
+        <ul>
+          <li><strong>With Emergency Contacts:</strong> When you activate emergency features, we share your location and
+            alert information with your designated emergency contacts.</li>
+          <li><strong>With Service Providers:</strong> We may share information with vendors, consultants, and other
+            service providers who need access to such information to carry out work on our behalf.</li>
+          <li><strong>In Connection with Mergers and Acquisitions:</strong> We may share or transfer information in
+            connection with, or during negotiations of, any merger, sale of company assets, financing, or acquisition of
+            all or a portion of our business.</li>
+          <li><strong>For Legal Reasons:</strong> We may share information to comply with legal obligations, protect and
+            defend our rights and property, or protect the safety of our users or others.</li>
+          <li><strong>With Your Consent:</strong> We may share information for any other purposes disclosed to you at
+            the time we collect the information or pursuant to your consent.</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="section-heading">Data Security</h2>
+        <p>
+          We implement appropriate technical and organizational measures to protect the security of your personal
+          information.
+          These measures include encryption of data in transit and at rest, secure server infrastructure, and regular
+          security assessments.
+        </p>
+        <p>
+          However, no method of transmission over the Internet or method of electronic storage is 100% secure.
+          Therefore,
+          we cannot guarantee absolute security of your information.
+        </p>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="section-heading">Data Retention</h2>
+        <p>
+          We retain your information for as long as necessary to fulfill the purposes outlined in this Privacy Policy,
+          unless a longer retention period is required or permitted by law.
+        </p>
+        <p>
+          When we no longer need to use your information and there is no need for us to keep it to comply with our legal
+          or regulatory obligations, we will either remove it from our systems or anonymize it so that it can no longer
+          be associated with you.
+        </p>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="section-heading">Your Rights and Choices</h2>
+        <p>You have the following rights regarding your personal information:</p>
+        <ul>
+          <li><strong>Access:</strong> You can request access to your personal information.</li>
+          <li><strong>Correction:</strong> You can request correction of inaccurate or incomplete personal information.
+          </li>
+          <li><strong>Deletion:</strong> You can request deletion of your personal information, subject to certain
+            exceptions.</li>
+          <li><strong>Objection:</strong> You can object to processing of your personal information.</li>
+          <li><strong>Restriction:</strong> You can request restriction of processing of your personal information.</li>
+          <li><strong>Data Portability:</strong> You can request a copy of your personal information in electronic
+            format.</li>
+        </ul>
+        <p>
+          To exercise these rights, please contact us at the contact information provided below.
+        </p>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="section-heading">Children's Privacy</h2>
+        <p>
+          Our App is not intended for children under the age of 13. We do not knowingly collect personal information
+          from children under 13. If we become aware that we have collected personal information from a child under 13,
+          we will take steps to delete such information.
+        </p>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="section-heading">Changes to This Privacy Policy</h2>
+        <p>
+          We may update this Privacy Policy from time to time. If we make material changes to this policy,
+          we will notify you by email or through our App before the changes become effective. We encourage you
+          to review this Privacy Policy periodically for the latest information on our privacy practices.
+        </p>
+        <p>
+          The date at the top of this policy indicates when it was last updated.
+        </p>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="section-heading">Contact Us</h2>
+        <p>If you have any questions about this Privacy Policy, please contact us at:</p>
+        <p>
+          <strong>Email:</strong> privacy@shieldapp.com<br>
+          <strong>Address:</strong> VOYAGER441, Women Safety Division<br>
+          Kolkata, West Bengal, India
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-light py-4" style="background-color: var(--primary-teal);">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 text-center text-md-start">
+          <p class="mb-0">&copy;
+            <script>document.write(new Date().getFullYear())</script> VOYAGER441 aka Mainak Banduri: All rights reserved
+            • Made with ❤️ for Women Safety
+          </p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item"><a href="/web/about/index.html"
+                class="text-light text-decoration-none">About</a></li>
+            <li class="list-inline-item"><a href="/web/features/index.html"
+                class="text-light text-decoration-none">Features</a></li>
+            <li class="list-inline-item"><a href="/web/contact/index.html"
+                class="text-light text-decoration-none">Contact Us</a></li>
+            <li class="list-inline-item"><a href="/web/privacy/index.html"
+                class="text-light text-decoration-none">Privacy Policy</a></li>
+            <li class="list-inline-item"><a href="/web/faq/index.html"
+                class="text-light text-decoration-none">FAQ</a></li>
+            <li class="list-inline-item"><a href="/web/terms/index.html"
+                class="text-light text-decoration-none">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

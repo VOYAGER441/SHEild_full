@@ -14,29 +14,38 @@
     <!-- Custom CSS -->
     <style>
       :root {
-        --primary-pink: #ff69b4;
-        --secondary-pink: #ffb6c1;
-        --light-pink: #fff0f5;
+        /* Updated color scheme to match React Native app */
+        --primary-teal: #003b49;
+        --secondary-teal: #2EC4B6;
+        --alert-coral: #E76F51;
+        --background-light: #F4F7FB;
+        --card-white: #FFFFFF;
+        --text-dark: #0D1B2A;
+        --text-secondary: #e9edf2;
       }
 
       body {
         font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+        background-color: var(--background-light);
+        font-size: 16px;
       }
 
       .hero-section {
         background: linear-gradient(
           135deg,
-          var(--light-pink),
-          var(--secondary-pink)
+          var(--background-light),
+          var(--card-white)
         );
         min-height: 100vh;
         padding: 100px 0;
       }
 
       .app-screenshot {
-        border-radius: 30px;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        border-radius: 20px; /* Match React Native borderRadius */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Match React Native shadow */
         transition: transform 0.3s ease;
+        width: 100%;
+        height: auto;
       }
 
       .app-screenshot:hover {
@@ -44,17 +53,18 @@
       }
 
       .features-section {
-        background-color: white;
+        background-color: var(--card-white);
         padding: 80px 0;
       }
 
       .feature-card {
         padding: 30px;
         border-radius: 20px;
-        background: white;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        background: var(--card-white);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         height: 100%;
         transition: transform 0.3s ease;
+        border: 1px solid rgba(0, 0, 0, 0.05);
       }
 
       .feature-card:hover {
@@ -62,22 +72,115 @@
       }
 
       .btn-primary {
-        background-color: var(--primary-pink);
+        background-color: var(--primary-teal);
         border: none;
         padding: 12px 30px;
-        border-radius: 30px;
+        border-radius: 20px;
         font-weight: 600;
+        color: var(--text-secondary);
       }
 
       .btn-primary:hover {
-        background-color: var(--secondary-pink);
+        background-color: var(--secondary-teal);
         transform: translateY(-2px);
+        color: var(--text-secondary);
       }
 
       .section-heading {
-        color: var(--primary-pink);
+        color: var(--primary-teal);
         font-weight: bold;
         margin-bottom: 50px;
+        font-size: 2rem;
+      }
+
+      .alert-feature {
+        border-left: 4px solid var(--alert-coral);
+      }
+
+      .teal-feature {
+        border-left: 4px solid var(--secondary-teal);
+      }
+
+      .navbar-brand {
+        color: var(--primary-teal) !important;
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
+
+      .nav-link {
+        color: var(--text-dark) !important;
+        font-size: 1rem;
+        padding: 0.5rem 1rem !important;
+      }
+
+      .nav-link:hover {
+        color: var(--primary-teal) !important;
+      }
+
+      footer {
+        background-color: var(--primary-teal) !important;
+      }
+
+      /* Mobile responsiveness improvements */
+      @media (max-width: 768px) {
+        .hero-section {
+          padding: 80px 0 40px 0;
+          text-align: center;
+        }
+        
+        .section-heading {
+          font-size: 1.75rem;
+          margin-bottom: 30px;
+        }
+        
+        .feature-card {
+          padding: 20px;
+          margin-bottom: 20px;
+        }
+        
+        .app-screenshot {
+          margin-bottom: 20px;
+        }
+        
+        .btn-primary {
+          width: 100%;
+          margin-bottom: 15px;
+        }
+        
+        .navbar-brand {
+          font-size: 1.25rem;
+        }
+        
+        .nav-link {
+          padding: 0.75rem 1rem !important;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar-collapse {
+          background-color: white;
+          border-radius: 10px;
+          margin-top: 10px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+      }
+      
+      @media (max-width: 576px) {
+        .hero-section {
+          padding: 60px 0 30px 0;
+        }
+        
+        .section-heading {
+          font-size: 1.5rem;
+          margin-bottom: 20px;
+        }
+        
+        .display-4 {
+          font-size: 2rem;
+        }
+        
+        .lead {
+          font-size: 1rem;
+        }
       }
     </style>
   </head>
@@ -96,7 +199,7 @@
         <a
           class="navbar-brand fw-bold"
           href="#"
-          style="color: var(--primary-pink)"
+          style="color: var(--primary-teal)"
           >SHEild</a
         >
         <button
@@ -111,6 +214,9 @@
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
               <a class="nav-link" href="#features">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#screenshots">Screenshots</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#about">About</a>
@@ -129,17 +235,17 @@
         <div class="row align-items-center">
           <div class="col-lg-6">
             <h1 class="display-4 fw-bold mb-4">
-              Empowering women through thoughtful design and safety
+              Your Personal Safety Companion
             </h1>
             <p class="lead mb-4">
-              SHEild is your personal safety companion, designed to provide
-              confidence, safety, and peace of mind.
+              SHEild empowers women with essential safety features including emergency alerts, 
+              location sharing, fake calls, and a supportive community.
             </p>
             <a href="#download" class="btn btn-primary btn-lg">Download Now</a>
           </div>
           <div class="col-lg-6">
             <img
-              src="/images/appss.jpg"
+              src="/images/sheild_home.jpeg"
               alt="SHEild App Interface"
               class="img-fluid app-screenshot"
             />
@@ -154,29 +260,50 @@
         <h2 class="text-center section-heading">Key Features</h2>
         <div class="row g-4">
           <div class="col-md-4">
-            <div class="feature-card">
-              <h3 class="h5 mb-3">Emergency SOS</h3>
+            <div class="feature-card alert-feature">
+              <h3 class="h5 mb-3">SOS Emergency Button</h3>
               <p class="mb-0">
-                Quick access to emergency contacts and authorities with just one
-                tap.
+                Instant alert system that notifies your emergency contacts with your location.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-card teal-feature">
+              <h3 class="h5 mb-3">Fake Call Feature</h3>
+              <p class="mb-0">
+                Create a fake call to escape uncomfortable situations discreetly.
               </p>
             </div>
           </div>
           <div class="col-md-4">
             <div class="feature-card">
-              <h3 class="h5 mb-3">Location Tracking</h3>
+              <h3 class="h5 mb-3">Location Sharing</h3>
               <p class="mb-0">
-                Real-time location sharing with trusted contacts for added
-                safety.
+                Share your real-time location with trusted contacts for added safety.
               </p>
             </div>
           </div>
           <div class="col-md-4">
             <div class="feature-card">
-              <h3 class="h5 mb-3">Safety Network</h3>
+              <h3 class="h5 mb-3">Community Support</h3>
               <p class="mb-0">
-                Build your trusted circle of friends and family for immediate
-                assistance.
+                Connect with other users in a safe community platform to share experiences.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-card teal-feature">
+              <h3 class="h5 mb-3">SHEild AI Assistant</h3>
+              <p class="mb-0">
+                Get personalized safety recommendations and support from our AI assistant.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-card alert-feature">
+              <h3 class="h5 mb-3">Offline Maps</h3>
+              <p class="mb-0">
+                Access maps without internet connection for reliable navigation anywhere.
               </p>
             </div>
           </div>
@@ -191,22 +318,93 @@
           <div class="col-lg-6">
             <h2 class="section-heading">About SHEild</h2>
             <p class="lead">
-              Designing a future where women feel empowered, supported, and
-              unstoppable.
+              Designed specifically for women's safety with features that matter most.
             </p>
             <p>
-              Our mission is to provide women with the tools they need to feel
-              safe and confident in any situation. SHEild combines cutting-edge
-              technology with thoughtful design to create a comprehensive safety
-              solution.
+              SHEild is more than just a safety app - it's a community of women supporting women. 
+              From emergency alerts to offline maps, we've thought of everything to keep you safe.
+            </p>
+            <p>
+              With features like fake calls, location sharing, and our innovative SHEild AI assistant, 
+              you're never alone when you need help.
             </p>
           </div>
           <div class="col-lg-6">
             <img
-              src="/images/appss2.png"
-              alt="About SHEild"
+              src="/images/sheild_sos_center.jpeg"
+              alt="SHEild SOS Center"
               class="img-fluid rounded-5 shadow app-screenshot"
             />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section id="screenshots" class="py-5">
+      <div class="container">
+        <h2 class="text-center section-heading">App Screenshots</h2>
+        <p class="text-center mb-5 lead">Explore the key features of SHEild in action</p>
+        
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 feature-card">
+              <img src="/images/sheild_sos_center.jpeg" class="card-img-top app-screenshot" alt="SOS Center">
+              <div class="card-body">
+                <h5 class="card-title">SOS Emergency Center</h5>
+                <p class="card-text">Quick access to emergency contacts and instant alert system with location sharing.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 feature-card">
+              <img src="/images/sheild_community.jpeg" class="card-img-top app-screenshot" alt="Community">
+              <div class="card-body">
+                <h5 class="card-title">Community Support</h5>
+                <p class="card-text">Connect with other users in a safe community platform to share experiences and advice.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 feature-card">
+              <img src="/images/sheild_maps.jpeg" class="card-img-top app-screenshot" alt="Maps">
+              <div class="card-body">
+                <h5 class="card-title">Offline Maps</h5>
+                <p class="card-text">Access maps without internet connection for reliable navigation anywhere.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 feature-card">
+              <img src="/images/sheild_ai.jpeg" class="card-img-top app-screenshot" alt="SHEild AI">
+              <div class="card-body">
+                <h5 class="card-title">SHEild AI Assistant</h5>
+                <p class="card-text">Get personalized safety recommendations and support from our AI assistant.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 feature-card">
+              <img src="/images/sheild_profile.jpeg" class="card-img-top app-screenshot" alt="Profile">
+              <div class="card-body">
+                <h5 class="card-title">Personal Profile</h5>
+                <p class="card-text">Manage your safety settings, emergency contacts, and preferences in one place.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 feature-card">
+              <img src="/images/sheild_home.jpeg" class="card-img-top app-screenshot" alt="Home Screen">
+              <div class="card-body">
+                <h5 class="card-title">Dashboard</h5>
+                <p class="card-text">Quick access to all safety features including fake calls, location sharing, and more.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -216,22 +414,37 @@
     <section id="download" class="py-5 bg-light">
       <div class="container text-center">
         <h2 class="section-heading">Download SHEild Today</h2>
-        <p class="lead mb-4">Available on iOS and Android</p>
+        <p class="lead mb-4">Join thousands of women who trust SHEild for their safety</p>
         <div class="d-flex justify-content-center gap-3">
           <a href="#" class="btn btn-dark btn-lg">
             <i class="bi bi-apple"></i> App Store
           </a>
           <a href="#" class="btn btn-dark btn-lg">
-            <i class="bi bi-google-play"></i> Play Store
+            <i class="bi bi-google-play"></i> Google Play
           </a>
         </div>
+        <p class="mt-4 mb-0">Version 1.0.0 • Free to download</p>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark text-light py-4">
-      <div class="container text-center">
-        <p class="mb-0">&copy; 2025 SHEild. All rights reserved.</p>
+    <footer class="text-light py-4" style="background-color: var(--primary-teal);">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 text-center text-md-start">
+            <p class="mb-0">&copy;<script>document.write(new Date().getFullYear())</script> VOYAGER441 aka Mainak Banduri: All rights reserved • Made with ❤️ for Women Safety</p>
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            <ul class="list-inline mb-0">
+              <li class="list-inline-item"><a href="/web/about/index.html" class="text-light text-decoration-none">About</a></li>
+              <li class="list-inline-item"><a href="/web/features/index.html" class="text-light text-decoration-none">Features</a></li>
+              <li class="list-inline-item"><a href="/web/contact/index.html" class="text-light text-decoration-none">Contact Us</a></li>
+              <li class="list-inline-item"><a href="/web/faq/index.html" class="text-light text-decoration-none">FAQ</a></li>
+              <li class="list-inline-item"><a href="/web/privacy/index.html" class="text-light text-decoration-none">Privacy Policy</a></li>
+              <li class="list-inline-item"><a href="/web/terms/index.html" class="text-light text-decoration-none">Terms of Service</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </footer>
 

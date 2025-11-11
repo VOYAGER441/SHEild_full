@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us - SHEild Women Safety App</title>
+  <link rel="icon" href="/images/favicon.png" type="image/png" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Custom CSS -->
+  <style>
+    :root {
+      /* Updated color scheme to match React Native app */
+      --primary-teal: #003b49;
+      --secondary-teal: #2EC4B6;
+      --alert-coral: #E76F51;
+      --background-light: #F4F7FB;
+      --card-white: #FFFFFF;
+      --text-dark: #0D1B2A;
+      --text-secondary: #e9edf2;
+    }
+
+    body {
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      background-color: var(--background-light);
+      font-size: 16px;
+      padding-top: 70px;
+    }
+
+    .hero-section {
+      background: linear-gradient(135deg,
+          var(--background-light),
+          var(--card-white));
+      padding: 60px 0;
+    }
+
+    .app-screenshot {
+      border-radius: 20px;
+      /* Match React Native borderRadius */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      /* Match React Native shadow */
+      transition: transform 0.3s ease;
+      width: 100%;
+      height: auto;
+    }
+
+    .app-screenshot:hover {
+      transform: translateY(-10px);
+    }
+
+    .features-section {
+      background-color: var(--card-white);
+      padding: 80px 0;
+    }
+
+    .feature-card {
+      padding: 30px;
+      border-radius: 20px;
+      background: var(--card-white);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      height: 100%;
+      transition: transform 0.3s ease;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .btn-primary {
+      background-color: var(--primary-teal);
+      border: none;
+      padding: 12px 30px;
+      border-radius: 20px;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--secondary-teal);
+      transform: translateY(-2px);
+      color: var(--text-secondary);
+    }
+
+    .section-heading {
+      color: var(--primary-teal);
+      font-weight: bold;
+      margin-bottom: 50px;
+      font-size: 2rem;
+    }
+
+    .alert-feature {
+      border-left: 4px solid var(--alert-coral);
+    }
+
+    .teal-feature {
+      border-left: 4px solid var(--secondary-teal);
+    }
+
+    .navbar-brand {
+      color: var(--primary-teal) !important;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    .nav-link {
+      color: var(--text-dark) !important;
+      font-size: 1rem;
+      padding: 0.5rem 1rem !important;
+    }
+
+    .nav-link:hover {
+      color: var(--primary-teal) !important;
+    }
+
+    footer {
+      background-color: var(--primary-teal) !important;
+    }
+
+    /* Mobile responsiveness improvements */
+    @media (max-width: 768px) {
+      .hero-section {
+        padding: 80px 0 40px 0;
+        text-align: center;
+      }
+
+      .section-heading {
+        font-size: 1.75rem;
+        margin-bottom: 30px;
+      }
+
+      .feature-card {
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+
+      .app-screenshot {
+        margin-bottom: 20px;
+      }
+
+      .btn-primary {
+        width: 100%;
+        margin-bottom: 15px;
+      }
+
+      .navbar-brand {
+        font-size: 1.25rem;
+      }
+
+      .nav-link {
+        padding: 0.75rem 1rem !important;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar-collapse {
+        background-color: white;
+        border-radius: 10px;
+        margin-top: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero-section {
+        padding: 60px 0 30px 0;
+      }
+
+      .section-heading {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+      }
+
+      .display-4 {
+        font-size: 2rem;
+      }
+
+      .lead {
+        font-size: 1rem;
+      }
+    }
+
+    .contact-card {
+      background-color: var(--card-white);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      height: 100%;
+    }
+
+    .contact-icon {
+      font-size: 2.5rem;
+      color: var(--primary-teal);
+      margin-bottom: 20px;
+    }
+
+    .form-control {
+      padding: 12px 15px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      margin-bottom: 20px;
+    }
+
+    textarea.form-control {
+      min-height: 150px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+    <div class="container">
+      <img src="/images/favicon.png" alt="SHEild Logo" class="navbar-brand"
+        style="width: 60px; height: 70px; margin-right: 10px" />
+      <a class="navbar-brand fw-bold" href="/" style="color: var(--primary-teal)">SHEild</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/#features">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/#screenshots">Screenshots</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/#download">Download</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-12 text-center">
+          <h1 class="display-4 fw-bold mb-4">
+            Contact Us
+          </h1>
+          <p class="lead mb-4">
+            We're here to help and would love to hear from you.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Information Section -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center section-heading">Get In Touch</h2>
+      <p class="text-center mb-5 lead">We're committed to providing the best support for your safety</p>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="contact-card text-center">
+            <div class="contact-icon">
+              <i class="bi bi-envelope-fill"></i>
+            </div>
+            <h3 class="h5 mb-3">Email Support</h3>
+            <p class="mb-0">
+              For general inquiries, support requests, or feedback:<br>
+              <strong><a href="mailto:support@shieldapp.com" class="text-decoration-none"
+                  style="color: var(--primary-teal);">support@shieldapp.com</a></strong>
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="contact-card text-center">
+            <div class="contact-icon">
+              <i class="bi bi-telephone-fill"></i>
+            </div>
+            <h3 class="h5 mb-3">Emergency Hotline</h3>
+            <p class="mb-0">
+              For immediate assistance with app emergencies:<br>
+              <strong><a href="tel:+919876543210" class="text-decoration-none" style="color: var(--primary-teal);">+91
+                  98765 43210</a></strong>
+            </p>
+            <p class="small text-muted mt-2">Available 24/7 for app-related emergencies</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="contact-card text-center">
+            <div class="contact-icon">
+              <i class="bi bi-geo-alt-fill"></i>
+            </div>
+            <h3 class="h5 mb-3">Office Address</h3>
+            <p class="mb-0">
+              VOYAGER441, Women Safety Division<br>
+              Kolkata, West Bengal<br>
+              India - 700001
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="contact-card">
+            <h2 class="section-heading text-center">Send Us a Message</h2>
+            <p class="text-center mb-4">Have questions or feedback? Fill out the form below and we'll get back to you as
+              soon as possible.</p>
+
+            <form>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="subject" class="form-label">Subject</label>
+                <input type="text" class="form-control" id="subject" placeholder="What is this regarding?">
+              </div>
+
+              <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" placeholder="How can we help you?"></textarea>
+              </div>
+
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Media Section -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center section-heading">Connect With Us</h2>
+      <p class="text-center mb-5 lead">Follow us on social media for updates and safety tips</p>
+
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-3 col-6">
+          <div class="contact-card text-center">
+            <div class="contact-icon">
+              <i class="bi bi-facebook"></i>
+            </div>
+            <h3 class="h5 mb-0">Facebook</h3>
+            <p class="mb-0">
+              <a href="#" class="text-decoration-none" style="color: var(--primary-teal);">@SHEildApp</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+          <div class="contact-card text-center">
+            <div class="contact-icon">
+              <i class="bi bi-twitter"></i>
+            </div>
+            <h3 class="h5 mb-0">Twitter</h3>
+            <p class="mb-0">
+              <a href="#" class="text-decoration-none" style="color: var(--primary-teal);">@SHEild_App</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+          <div class="contact-card text-center">
+            <div class="contact-icon">
+              <i class="bi bi-instagram"></i>
+            </div>
+            <h3 class="h5 mb-0">Instagram</h3>
+            <p class="mb-0">
+              <a href="#" class="text-decoration-none" style="color: var(--primary-teal);">@SHEild_Women_Safety</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+          <div class="contact-card text-center">
+            <div class="contact-icon">
+              <i class="bi bi-linkedin"></i>
+            </div>
+            <h3 class="h5 mb-0">LinkedIn</h3>
+            <p class="mb-0">
+              <a href="#" class="text-decoration-none" style="color: var(--primary-teal);">SHEild Women Safety</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center section-heading">Frequently Asked Questions</h2>
+      <p class="text-center mb-5 lead">Find quick answers to common questions</p>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                  How quickly do you respond to support requests?
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  We typically respond to support requests within 24 hours during business days. For emergency issues
+                  related to the app's functionality, our response time is usually within 2-4 hours.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  I'm having trouble with the SOS feature, who should I contact?
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  For issues with the SOS feature, please contact our emergency support line at +91 98765 43210. This
+                  line is monitored 24/7 for urgent app-related issues.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Can I request new features for the app?
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Absolutely! We welcome feature requests and suggestions. Please send us an email at
+                  support@shieldapp.com with your ideas, or submit them through the feedback form in the app.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-light py-4" style="background-color: var(--primary-teal);">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 text-center text-md-start">
+          <p class="mb-0">&copy;
+            <script>document.write(new Date().getFullYear())</script> VOYAGER441 aka Mainak Banduri: All rights reserved
+            • Made with ❤️ for Women Safety
+          </p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item"><a href="/web/about/index.html"
+                class="text-light text-decoration-none">About</a></li>
+            <li class="list-inline-item"><a href="/web/features/index.html"
+                class="text-light text-decoration-none">Features</a></li>
+            <li class="list-inline-item"><a href="/web/contact/index.html"
+                class="text-light text-decoration-none">Contact Us</a></li>
+            <li class="list-inline-item"><a href="/web/privacy/index.html"
+                class="text-light text-decoration-none">Privacy Policy</a></li>
+            <li class="list-inline-item"><a href="/web/faq/index.html"
+                class="text-light text-decoration-none">FAQ</a></li>
+            <li class="list-inline-item"><a href="/web/terms/index.html"
+                class="text-light text-decoration-none">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Bootstrap Icons (for contact icons) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</body>
+
+</html>
